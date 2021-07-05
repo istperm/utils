@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"reflect"
 	"strconv"
+	"strings"
 )
 
 // Dump - format object hierarchically
@@ -50,6 +51,14 @@ func BoolToString(v bool, s1, s0 string) string {
 	} else {
 		return s0
 	}
+}
+
+func StrWord(s string, n int, sep string) string {
+	w := strings.Split(s, sep)
+	if n < len(w) {
+		return w[n]
+	}
+	return ""
 }
 
 type RuneChar struct {
